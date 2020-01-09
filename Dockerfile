@@ -1,4 +1,3 @@
-ARG NGINX_VERSION=1.17
 ARG EXPOSED_PORT=80
 ARG NODE_VERSION=10.15.3
 
@@ -12,12 +11,9 @@ COPY yarn.lock ./yarn.lock
 RUN yarn
 RUN yarn build
 
-FROM nginx:${NGINX_VERSION}
+FROM docker.pkg.github.com/socialgouv/docker/nginx4spa:0.21.0
 
 ENV PORT=${EXPOSED_PORT}
-
-COPY --from=builder /app/build /usr/share/nginx/html
-
 EXPOSE ${PORT}
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder /app/build /usr/share/nginx/html
