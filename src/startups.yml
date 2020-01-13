@@ -41,6 +41,10 @@
   description:
     Faciliter l'accès aux droits pour les personnes sans domicile stable, en
     simplifiant la gestion de la domiciliation
+  kpis:
+    Structures inscrites : 21
+    Nombre d'utilisateurs : 45
+    Nombre de dossiers : 2109
 
 - titre: Code du travail numérique
   image: images/cdtn.png
